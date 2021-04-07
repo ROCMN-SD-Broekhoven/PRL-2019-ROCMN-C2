@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    background-image: url("media/supermarkt.jpg");
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+
+.middenvlakcontainer {
+    height: 100vh;
+    width: 75vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.middenvlak {
+    background-color: #515151;
+    width: 500px;
+    height: 500px;
+    border-radius: 43px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.sidebar {
+    position: absolute;
+    width: 25vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: #979797;
+    text-align: center;
+    color: black;
+}
+.sidebar h1 {
+    font-size: 35px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sidediv{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+}

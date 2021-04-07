@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="algemeen.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="middenvlakcontainer">
+        <div class="middenvlak">
+            <!-- <form action="#" method="POST"> -->
+            <div id="login">
+                <form method="POST" action="validate.php">
+                    <label for="p1" class="hidden"><br></label>
+                    <input type="text" name="name" placeholder="Uw volledige naam" id="p1" maxlength="50" required>
+                    <label for="p2" class="hidden"></label>
+                    <input type="text" name="code" placeholder="Uw code" id="p2" maxlength="6" required>
+                    <label for="p3" class="hidden"></label>
+                    <input type="text" name="zip" placeholder="Postcode" id="p3" maxlength="6" required>
+                    <label for="p4" class="hidden"></label>
+                    <input type="email" name="email" placeholder="E-mail" id="p4" maxlength="50" required>
+
+                    <div class="checkb">
+                        <label class="container">Aanmelden nieuwsbrief
+                            <input type="checkbox" name="newsletter" checked="checked" id="p5">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Algemene voorwaarden
+                            <input type="checkbox" name="voorwaarden" id="p6">
+                            <span class="checkmark"></span>
+                        </label>
+
+                    </div>
+                    <button role="button" tabindex="0">Speel!</button>
+                </form>
+            </div>
+            <!-- </form> -->
+
+
+
+        </div>
+    </div>
+    <div class="sidebar">
+
+        <h1>Spelregels:</h1>
+        <div class="sidediv">
+            <p1>U heeft 9 kaarten voor u staan.</p1><br>
+            <p2>Druk 1 voor 1 op de kaarten om ze om te draaien.</p2><br>
+            <p3>Heeft u drie op en rij? Dan heeft u een prijs gewonnen!</p3><br>
+            <p4>Heeft u geen drie op een rij? Dan heeft u verloren. Volgende keer beter!</p4>
+        </div>
+    </div>
+</body>
+
+
+
+</html>

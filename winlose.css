@@ -1,0 +1,46 @@
+
+
+.middenvlak h2 {
+    color: white;
+    font-size: 30px;
+}
+
+
+.middenvlak p5 {
+    color: white;
+    font-size: 30px;
+}
+
+button {
+    border-radius: 20px;
+    height: 40px;
+    width: 25%;
+    background-color: #979797;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.plaatje{
+    width: 150px;
+    margin: 25px;
+}
+
+.middenvlak {
+    text-align: center;
+}
+
+.sidediv{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
