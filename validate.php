@@ -30,6 +30,11 @@ $email = mysqli_real_escape_string($conn, $_POST['email']);
 $newsletter = mysqli_real_escape_string($conn, $_POST['newsletter']);
 $voorwaarden = mysqli_real_escape_string($conn, $_POST['voorwaarden']);
 
+$name = strtolower($name);
+$code = strtolower($code);
+$zip = strtolower($zip);
+$email = strtolower($email);
+
 // Saving data to db - table
 $stmt = $conn->prepare("INSERT INTO codes (VolNaam, Code, PostCode, EMail, NieuwsBrief, VoorwaardenGeaccepteerd)
 VALUES (?, ?, ?, ?, ?, ?)");
@@ -58,7 +63,7 @@ function writeMsg($msg) {
 }
 
 // Velden Validatie
-if(!preg_match("/^[a-zA-Z-' ]*$/",$name)){
+if(!preg_match("/^['/[^a-z0-9 _]+/i']*$/",$name)){
     writeMsg($name . " is geen valide naam input");
 }
 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
