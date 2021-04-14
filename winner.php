@@ -12,22 +12,14 @@
 </head>
 
 <body>
-    <div class="middenvlakcontainer">
-        <div class="middenvlak">
-            <h2>Gefeliciteerd!</h2>
-            <p5>U heeft een prijs gewonnen bij de Jumbo!</p5>
-            <br>
-            <img src="media/logos/logo1.png" alt="logo" class="plaatje">
-            <br>
-            <button type="submit" role="button" tabindex="0">Bevestigen</button>
-        </div>
-    </div>
+    
 
 
     <?php
+        $winkelID = 0;
         $win = 0;
         $sess = $_COOKIE["session"];
-
+        
         $servername = "localhost";
         $username = "Bas";
         $password = "spaarSpook9";
@@ -45,31 +37,44 @@
       
         if ($result->num_rows > 0) {
           while($row = $result->fetch_assoc()) {
+            $winkel = $row["WinkelID"];
             if($row["Gewonnen"] == 1){
-                $win = 1;
-                $naam = $row["VolNaam"];
-                $code = $row["Code"];
-                $zip = $row["PostCode"];
-                $email = $row["EMail"];
-                $winkel = $row["WinkelID"];
-                echo
-                "<div class=\"sidebar\">
-                    <h1>Uw gegevens:</h1>
-                    <div class=\"sidediv\">
-                        <p1 id=\"p1\">Naam: $naam</p1><br>
-                        <p2 id=\"p2\">Code: $code</p2><br>
-                        <p3 id=\"p3\">Postcode: $zip</p3><br>
-                        <p4 id=\"p4\">E-mail: $email</p4>
-                    </div>
-    
-                </div>
-                <script>
-                    alert(\"Een mail is verzonden dat je gewonnen hebt bij winkelID: $winkel\");
-                </script>";
+                $sql2 = "SELECT * FROM winkels where ID = $winkel";
+                $result2 = $conn->query($sql2);
+                while($row2 = $result2->fetch_assoc()) {
+                    $wnaam = $row2["WinkelNaam"];
+                    $wimg = $row2["WinkelLogoPath"];
+                    echo "<div class=\"middenvlakcontainer\">
+                            <div class=\"middenvlak\">
+                                <h2>Gefeliciteerd!</h2>
+                                <p5>U heeft een prijs gewonnen bij de $wnaam!</p5>
+                                <br>
+                                <img src=\"$wimg\" alt=\"logo\" class=\"plaatje\">
+                                <br>
+                                <a href=\"login.html\">
+                                    <button type=\"submit\" role=\"button\" tabindex=\"0\">Terug naar Login</button>
+                                </a>
+                            </div>
+                        </div>";
+                }
             }
           }
         }
-    ?>
+    ?> 
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username: "email",
+            Password: "ww",
+            To: gotMail,
+            From: "email",
+            Subject: "Speluitslag",
+            Body: "U heeft de prijs: [prijs] gewonnen bij winkel: [winkel]!!"
+        }).then(
+            message => alert(message)
+        );
+    </script>
 
 </body>
 
