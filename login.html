@@ -9,6 +9,36 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="algemeen.css">
     <link rel="stylesheet" href="login.css">
+    <style>
+        /* Tooltip container */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+            /* If you want dots under the hoverable text */
+        }
+
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+
+            /* Position the tooltip text - see examples below! */
+            position: absolute;
+            z-index: 1;
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -18,13 +48,25 @@
             <div id="login">
                 <form method="POST" action="validate.php">
                     <label for="p1" class="hidden"><br></label>
-                    <input type="text" name="name" placeholder="Uw volledige naam" id="p1" maxlength="50" required>
+                    <div class="tooltip">
+                        <span class="tooltiptext">Uw volledige naam</span>
+                        <input type="text" name="name" placeholder="Uw volledige naam" id="p1" maxlength="50" required>
+                    </div>
                     <label for="p2" class="hidden"></label>
-                    <input type="text" name="code" placeholder="Uw code" id="p2" maxlength="6" required>
-                    <label for="p3" class="hidden"></label>
-                    <input type="text" name="zip" placeholder="Postcode" id="p3" maxlength="6" required>
+                    <div class="tooltip">
+                        <span class="tooltiptext">Uw code</span>
+                        <input type="text" name="code" placeholder="Uw code" id="p2" maxlength="6" required>
+                    </div>
+                    <div class="tooltip">
+                        <span class="tooltiptext">Uw postcode</span>
+                        <label for="p3" class="hidden"></label>
+                        <input type="text" name="zip" placeholder="Postcode" id="p3" maxlength="6" required>
+                    </div>
                     <label for="p4" class="hidden"></label>
-                    <input type="email" name="email" placeholder="E-mail" id="p4" maxlength="50" required>
+                    <div class="tooltip">
+                        <span class="tooltiptext">Uw E-mail</span>
+                        <input type="email" name="email" placeholder="E-mail" id="p4" maxlength="50" required>
+                    </div>
 
                     <div class="checkb">
                         <label class="container">Aanmelden nieuwsbrief
@@ -45,16 +87,6 @@
 
         </div>
     </div>
-    <!-- <div class="sidebar">
-
-        <h1>Spelregels:</h1>
-        <div class="sidediv">
-            <p1>U heeft 9 kaarten voor u staan.</p1><br>
-            <p2>Druk 1 voor 1 op de kaarten om ze om te draaien.</p2><br>
-            <p3>Heeft u drie op en rij? Dan heeft u een prijs gewonnen!</p3><br>
-            <p4>Heeft u geen drie op een rij? Dan heeft u verloren. Volgende keer beter!</p4>
-        </div>
-    </div> -->
 </body>
 
 
