@@ -15,23 +15,23 @@
     <div class="middenvlakcontainer">
         <div class="middenvlak">
             <div class="grid">
-                <div class="item1 cards__single"><img src="media/vraagteken" class="cards__front"><img id="11"
+                <div class="item1 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="11"
                         src="getImage.php?id=1" class="cards__back"></div>
-                <div class="item2 cards__single"><img src="media/vraagteken" class="cards__front"><img id="12"
+                <div class="item2 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="12"
                         src="getImage.php?id=1" class="cards__back"></div>
-                <div class="item3 cards__single"><img src="media/vraagteken" class="cards__front"><img id="13"
+                <div class="item3 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="13"
                         src="getImage.php?id=1" class="cards__back"></div>
-                <div class="item4 cards__single"><img src="media/vraagteken" class="cards__front"><img id="21"
+                <div class="item4 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="21"
                         src="getImage.php?id=2" class="cards__back"></div>
-                <div class="item5 cards__single"><img src="media/vraagteken" class="cards__front"><img id="22"
+                <div class="item5 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="22"
                         src="getImage.php?id=2" class="cards__back"></div>
-                <div class="item6 cards__single"><img src="media/vraagteken" class="cards__front"><img id="23"
+                <div class="item6 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="23"
                         src="getImage.php?id=1" class="cards__back"></div>
-                <div class="item7 cards__single"><img src="media/vraagteken" class="cards__front"><img id="31"
+                <div class="item7 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="31"
                         src="getImage.php?id=2" class="cards__back"></div>
-                <div class="item8 cards__single"><img src="media/vraagteken" class="cards__front"><img id="32"
+                <div class="item8 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="32"
                         src="getImage.php?id=1" class="cards__back"></div>
-                <div class="item9 cards__single"><img src="media/vraagteken" class="cards__front"><img id="33"
+                <div class="item9 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="33"
                         src="getImage.php?id=2" class="cards__back"></div>
             </div>
         </div>
@@ -69,7 +69,7 @@
             echo("verbinden mislukt, probeer het later nog eens");
             die();
         }
-
+        echo "$sess";
         $sql = "SELECT * FROM codes where SessionID = '$sess'";
         $result = $conn->query($sql);
 
@@ -89,10 +89,10 @@
 
         if ($result2->num_rows > 0) {
           while($row = $result2->fetch_assoc()) {
-            array_push($alleWinkelIDs, $row["ID"]);
+              array_push($alleWinkelIDs, $row["ID"]);
           }
         }
-
+            echo "$PrijsID";
         $sql3 = "SELECT * FROM prijzen WHERE ID = $PrijsID LIMIT 1";
         $result3 = $conn->query($sql3);
 
@@ -113,12 +113,12 @@
           }
         }
 
-        $sql4 = "SELECT * FROM winkels WHERE ID = $winkelID LIMIT 1";
-        $result4 = $conn->query($sql4);
+    $sql5 = "SELECT * FROM winkels ORDER BY ID";
+        $result5 = $conn->query($sql5);
 
-        if ($result4->num_rows > 0) {
-          while($row = $result4->fetch_assoc()) {
-            array_push($alleWinkelLogos, $row["WinkelLogoPath"]);
+        if ($result5->num_rows > 0) {
+          while($row = $result5->fetch_assoc()) {
+              array_push($alleWinkelLogos, $row["WinkelLogoPath"]);
             
           }
         }
@@ -168,15 +168,15 @@
                 }
             }
         }
-        $n1 = $alleWinkelLogos[$winkelids[0][0]];
-        $n2 = $alleWinkelLogos[$winkelids[0][1]];
-        $n3 = $alleWinkelLogos[$winkelids[0][2]];
-        $n4 = $alleWinkelLogos[$winkelids[1][0]];
-        $n5 = $alleWinkelLogos[$winkelids[1][1]];
-        $n6 = $alleWinkelLogos[$winkelids[1][2]];
-        $n7 = $alleWinkelLogos[$winkelids[2][0]];
-        $n8 = $alleWinkelLogos[$winkelids[2][1]];
-        $n9 = $alleWinkelLogos[$winkelids[2][2]];
+        $n1 = $alleWinkelLogos[$winkelids[0][0]-1];
+        $n2 = $alleWinkelLogos[$winkelids[0][1]-1];
+        $n3 = $alleWinkelLogos[$winkelids[0][2]-1];
+        $n4 = $alleWinkelLogos[$winkelids[1][0]-1];
+        $n5 = $alleWinkelLogos[$winkelids[1][1]-1];
+        $n6 = $alleWinkelLogos[$winkelids[1][2]-1];
+        $n7 = $alleWinkelLogos[$winkelids[2][0]-1];
+        $n8 = $alleWinkelLogos[$winkelids[2][1]-1];
+        $n9 = $alleWinkelLogos[$winkelids[2][2]-1];
         if(rand(0,10)/10 < 0.5){
             if($win == 1){
                 echo "<script>
