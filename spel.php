@@ -15,23 +15,23 @@
     <div class="middenvlakcontainer">
         <div class="middenvlak">
             <div class="grid">
-                <div class="item1 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="11"
+                <div class="item1 cards__single"><img src="media/vraagteken" class="cards__front"><img id="11"
                         src="getImage.php?id=1" class="cards__back"></div>
-                <div class="item2 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="12"
+                <div class="item2 cards__single"><img src="media/vraagteken" class="cards__front"><img id="12"
                         src="getImage.php?id=1" class="cards__back"></div>
-                <div class="item3 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="13"
+                <div class="item3 cards__single"><img src="media/vraagteken" class="cards__front"><img id="13"
                         src="getImage.php?id=1" class="cards__back"></div>
-                <div class="item4 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="21"
+                <div class="item4 cards__single"><img src="media/vraagteken" class="cards__front"><img id="21"
                         src="getImage.php?id=2" class="cards__back"></div>
-                <div class="item5 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="22"
+                <div class="item5 cards__single"><img src="media/vraagteken" class="cards__front"><img id="22"
                         src="getImage.php?id=2" class="cards__back"></div>
-                <div class="item6 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="23"
+                <div class="item6 cards__single"><img src="media/vraagteken" class="cards__front"><img id="23"
                         src="getImage.php?id=1" class="cards__back"></div>
-                <div class="item7 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="31"
+                <div class="item7 cards__single"><img src="media/vraagteken" class="cards__front"><img id="31"
                         src="getImage.php?id=2" class="cards__back"></div>
-                <div class="item8 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="32"
+                <div class="item8 cards__single"><img src="media/vraagteken" class="cards__front"><img id="32"
                         src="getImage.php?id=1" class="cards__back"></div>
-                <div class="item9 cards__single"><img src="media/vraagteken.png" class="cards__front"><img id="33"
+                <div class="item9 cards__single"><img src="media/vraagteken" class="cards__front"><img id="33"
                         src="getImage.php?id=2" class="cards__back"></div>
             </div>
         </div>
@@ -168,15 +168,15 @@
                 }
             }
         }
-        $n1 = $alleWinkelLogos[$winkelids[0][0] -1];
-        $n2 = $alleWinkelLogos[$winkelids[0][1] -1];
-        $n3 = $alleWinkelLogos[$winkelids[0][2] -1];
-        $n4 = $alleWinkelLogos[$winkelids[1][0] -1];
-        $n5 = $alleWinkelLogos[$winkelids[1][1] -1];
-        $n6 = $alleWinkelLogos[$winkelids[1][2] -1];
-        $n7 = $alleWinkelLogos[$winkelids[2][0] -1];
-        $n8 = $alleWinkelLogos[$winkelids[2][1] -1];
-        $n9 = $alleWinkelLogos[$winkelids[2][2] -1];
+        $n1 = $alleWinkelLogos[$winkelids[0][0]];
+        $n2 = $alleWinkelLogos[$winkelids[0][1]];
+        $n3 = $alleWinkelLogos[$winkelids[0][2]];
+        $n4 = $alleWinkelLogos[$winkelids[1][0]];
+        $n5 = $alleWinkelLogos[$winkelids[1][1]];
+        $n6 = $alleWinkelLogos[$winkelids[1][2]];
+        $n7 = $alleWinkelLogos[$winkelids[2][0]];
+        $n8 = $alleWinkelLogos[$winkelids[2][1]];
+        $n9 = $alleWinkelLogos[$winkelids[2][2]];
         if(rand(0,10)/10 < 0.5){
             if($win == 1){
                 echo "<script>
@@ -194,17 +194,17 @@
                 
                 cards.forEach((card) => card.addEventListener(\"click\", flipCard));
 
-                document.getElementById(\"11\").src = \"media/logos/logo$n1.png\";
-                document.getElementById(\"12\").src = \"media/logos/logo$n2.png\";
-                document.getElementById(\"13\").src = \"media/logos/logo$n3.png\";
+                document.getElementById(\"11\").src = \"$n1\";
+                document.getElementById(\"12\").src = \"$n2\";
+                document.getElementById(\"13\").src = \"$n3\";
 
-                document.getElementById(\"21\").src = \"media/logos/logo$n4.png\";
-                document.getElementById(\"22\").src = \"media/logos/logo$n5.png\";
-                document.getElementById(\"23\").src = \"media/logos/logo$n6.png\";
+                document.getElementById(\"21\").src = \"$n4\";
+                document.getElementById(\"22\").src = \"$n5\";
+                document.getElementById(\"23\").src = \"$n6\";
 
-                document.getElementById(\"31\").src = \"media/logos/logo$n7.png\";
-                document.getElementById(\"32\").src = \"media/logos/logo$n8.png\";
-                document.getElementById(\"33\").src = \"media/logos/logo$n9.png\";
+                document.getElementById(\"31\").src = \"$n7\";
+                document.getElementById(\"32\").src = \"$n8\";
+                document.getElementById(\"33\").src = \"$n9\";
                 
             </script>";
             }
@@ -224,17 +224,17 @@
                 
                 cards.forEach((card) => card.addEventListener(\"click\", flipCard));
 
-                document.getElementById(\"11\").src = \"media/logos/logo$n1.png\";
-                document.getElementById(\"12\").src = \"media/logos/logo$n2.png\";
-                document.getElementById(\"13\").src = \"media/logos/logo$n3.png\";
+                document.getElementById(\"11\").src = \"$n1\";
+                document.getElementById(\"12\").src = \"$n2\";
+                document.getElementById(\"13\").src = \"$n3\";
 
-                document.getElementById(\"21\").src = \"media/logos/logo$n4.png\";
-                document.getElementById(\"22\").src = \"media/logos/logo$n5.png\";
-                document.getElementById(\"23\").src = \"media/logos/logo$n6.png\";
+                document.getElementById(\"21\").src = \"$n4\";
+                document.getElementById(\"22\").src = \"$n5\";
+                document.getElementById(\"23\").src = \"$n6\";
 
-                document.getElementById(\"31\").src = \"media/logos/logo$n7.png\";
-                document.getElementById(\"32\").src = \"media/logos/logo$n8.png\";
-                document.getElementById(\"33\").src = \"media/logos/logo$n9.png\";
+                document.getElementById(\"31\").src = \"$n7\";
+                document.getElementById(\"32\").src = \"$n8\";
+                document.getElementById(\"33\").src = \"$n9\";
                 
             </script>";
             }
@@ -256,17 +256,17 @@
                 
                 cards.forEach((card) => card.addEventListener(\"click\", flipCard));
 
-                document.getElementById(\"11\").src = \"media/logos/logo$n1.png\";
-                document.getElementById(\"12\").src = \"media/logos/logo$n4.png\";
-                document.getElementById(\"13\").src = \"media/logos/logo$n7.png\";
+                document.getElementById(\"11\").src = \"$n1\";
+                document.getElementById(\"12\").src = \"$n4\";
+                document.getElementById(\"13\").src = \"$n7\";
 
-                document.getElementById(\"21\").src = \"media/logos/logo$n2.png\";
-                document.getElementById(\"22\").src = \"media/logos/logo$n5.png\";
-                document.getElementById(\"23\").src = \"media/logos/logo$n8.png\";
+                document.getElementById(\"21\").src = \"$n2\";
+                document.getElementById(\"22\").src = \"$n5\";
+                document.getElementById(\"23\").src = \"$n8\";
 
-                document.getElementById(\"31\").src = \"media/logos/logo$n3.png\";
-                document.getElementById(\"32\").src = \"media/logos/logo$n6.png\";
-                document.getElementById(\"33\").src = \"media/logos/logo$n9.png\";
+                document.getElementById(\"31\").src = \"$n3\";
+                document.getElementById(\"32\").src = \"$n6\";
+                document.getElementById(\"33\").src = \"$n9\";
                 
             </script>";}
             else{
@@ -285,17 +285,17 @@
                 
                 cards.forEach((card) => card.addEventListener(\"click\", flipCard));
 
-                document.getElementById(\"11\").src = \"media/logos/logo$n1.png\";
-                document.getElementById(\"12\").src = \"media/logos/logo$n4.png\";
-                document.getElementById(\"13\").src = \"media/logos/logo$n7.png\";
+                document.getElementById(\"11\").src = \"$n1\";
+                document.getElementById(\"12\").src = \"$n4\";
+                document.getElementById(\"13\").src = \"$n7\";
 
-                document.getElementById(\"21\").src = \"media/logos/logo$n2.png\";
-                document.getElementById(\"22\").src = \"media/logos/logo$n5.png\";
-                document.getElementById(\"23\").src = \"media/logos/logo$n8.png\";
+                document.getElementById(\"21\").src = \"$n2\";
+                document.getElementById(\"22\").src = \"$n5\";
+                document.getElementById(\"23\").src = \"$n8\";
 
-                document.getElementById(\"31\").src = \"media/logos/logo$n3.png\";
-                document.getElementById(\"32\").src = \"media/logos/logo$n6.png\";
-                document.getElementById(\"33\").src = \"media/logos/logo$n9.png\";
+                document.getElementById(\"31\").src = \"$n3\";
+                document.getElementById(\"32\").src = \"$n6\";
+                document.getElementById(\"33\").src = \"$n9\";
                 
             </script>";
             }
