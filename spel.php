@@ -56,6 +56,7 @@
         $sess = $_COOKIE["session"];
         $PrijsID = 0;
         $winkelID = 0;
+        $alleWinkelLogos = array();
 
         $servername = "localhost";
         $username = "Bas";
@@ -111,6 +112,16 @@
             
           }
         }
+
+        $sql4 = "SELECT * FROM winkels WHERE ID = $winkelID LIMIT 1";
+        $result4 = $conn->query($sql4);
+
+        if ($result4->num_rows > 0) {
+          while($row = $result4->fetch_assoc()) {
+            array_push($alleWinkelLogos, $row["WinkelLogoPath"]);
+            
+          }
+        }
         
 
 
@@ -157,15 +168,15 @@
                 }
             }
         }
-        $n1 = $winkelids[0][0];
-        $n2 = $winkelids[0][1];
-        $n3 = $winkelids[0][2];
-        $n4 = $winkelids[1][0];
-        $n5 = $winkelids[1][1];
-        $n6 = $winkelids[1][2];
-        $n7 = $winkelids[2][0];
-        $n8 = $winkelids[2][1];
-        $n9 = $winkelids[2][2];
+        $n1 = $alleWinkelLogos[$winkelids[0][0] -1];
+        $n2 = $alleWinkelLogos[$winkelids[0][1] -1];
+        $n3 = $alleWinkelLogos[$winkelids[0][2] -1];
+        $n4 = $alleWinkelLogos[$winkelids[1][0] -1];
+        $n5 = $alleWinkelLogos[$winkelids[1][1] -1];
+        $n6 = $alleWinkelLogos[$winkelids[1][2] -1];
+        $n7 = $alleWinkelLogos[$winkelids[2][0] -1];
+        $n8 = $alleWinkelLogos[$winkelids[2][1] -1];
+        $n9 = $alleWinkelLogos[$winkelids[2][2] -1];
         if(rand(0,10)/10 < 0.5){
             if($win == 1){
                 echo "<script>
