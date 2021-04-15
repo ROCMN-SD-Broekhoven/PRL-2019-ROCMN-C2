@@ -1,4 +1,7 @@
 <?php
+include 'cookiecheck.php';
+?>
+<?php
 // db connect
 $servername = "localhost";
 $username = "Bas";
@@ -23,6 +26,7 @@ $stmt->bind_param('is', $winkID,$prize);
 $stmt->execute();
 
 echo "<script>
-      window.location.replace(\"prijsaanmaken.html\");
+      window.location.replace(\"prijsaanmaken.php\");
     </script>";
 die();
+?>
