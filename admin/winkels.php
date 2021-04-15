@@ -44,13 +44,11 @@ include 'cookiecheck.php';
     <div class="divider"></div>
     <ul class="nav menu">
         <li class="active"><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-        <li><a href="admintoevoegen.html"> Admin toevoegen</a></li>
-        <li><a href="winkels.html"> Winkels</a></li>
-        <li><a href="balanssysteem.html">Balanssysteem</a></li>
+        <li><a href="admintoevoegen.php"> Admin toevoegen</a></li>
+        <li><a href="winkels.php"> Winkels</a></li>
+        <li><a href="balanssysteem.php">Balanssysteem</a></li>
+        <li><a href="downloadCSV.php"> Deelnemers exporteren</a></li>
         <li><a href="prijsaanmaken.html"> Prijs aanmaken</a></li>
-        <li><a href="deelnemerexport.html"> Deelnemer export</a></li>
-        <li><a href="heatmap.html">Heatmap</a></li>
-        <li><a href="login.html"> Login</a></li>
     </ul>
 </div><!--/.sidebar-->
 
@@ -118,8 +116,10 @@ include 'cookiecheck.php';
         </style>
         <body>
 
-        <form action="">
-            <div class="container">
+        <!-- dit werkt nog niet helemaal als gehoopt -->
+
+        <form action="winkelen.php" method="post" ENCTYPE="multipart/form-data">
+            <!-- <div class="container"> -->
                 <h1>Winkels toevoegen</h1>
                 <p>Vul de velden in om een winkel toe te voegen</p>
                 <hr>
@@ -129,12 +129,10 @@ include 'cookiecheck.php';
 
                 <hr>
                 <p><b>Winkellogo:</b></p>
-                <FORM METHOD="post" ACTION="bestemming" ENCTYPE="multipart/form-data">
                     <INPUT TYPE="file" NAME="upload">
-                </FORM>
                 <button type="submit" class="registerbtn">Toevoegen</button>
 
-            </div>
+            <!-- </div> -->
         </form>
         </body>
     </div>	<!--/.main-->

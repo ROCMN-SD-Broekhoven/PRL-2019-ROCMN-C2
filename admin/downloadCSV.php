@@ -39,7 +39,7 @@ $data = array (
     "koppen"  => array("Naam", "Postcode", "Email")
 );
 
-$servername = "localhost";
+        $servername = "localhost";
         $username = "Bas";
         $password = "spaarSpook9";
         $dbname = "winkelcentrum";

@@ -46,13 +46,11 @@ include 'cookiecheck.php';
     <div class="divider"></div>
     <ul class="nav menu">
         <li class="active"><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-        <li><a href="admintoevoegen.html"> Admin toevoegen</a></li>
-        <li><a href="winkels.html"> Winkels</a></li>
-        <li><a href="balanssysteem.html">Balanssysteem</a></li>
+        <li><a href="admintoevoegen.php"> Admin toevoegen</a></li>
+        <li><a href="winkels.php"> Winkels</a></li>
+        <li><a href="balanssysteem.php">Balanssysteem</a></li>
+        <li><a href="downloadCSV.php"> Deelnemers exporteren</a></li>
         <li><a href="prijsaanmaken.html"> Prijs aanmaken</a></li>
-        <li><a href="deelnemerexport.html"> Deelnemer export</a></li>
-        <li><a href="heatmap.html">Heatmap</a></li>
-        <li><a href="login.html"> Login</a></li>
     </ul>
 </div><!--/.sidebar-->
 

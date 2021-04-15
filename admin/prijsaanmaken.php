@@ -31,27 +31,25 @@ include 'cookiecheck.php';
     </div>
 </nav>
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-  <div class="profile-sidebar">
-    <div class="profile-userpic">
-      <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
+    <div class="profile-sidebar">
+        <div class="profile-userpic">
+            <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
+        </div>
+        <div class="profile-usertitle">
+            <div class="profile-usertitle-name">Admin</div>
+            <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
+        </div>
+        <div class="clear"></div>
     </div>
-    <div class="profile-usertitle">
-      <div class="profile-usertitle-name">Admin</div>
-      <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
-    </div>
-    <div class="clear"></div>
-  </div>
-  <div class="divider"></div>
-  <ul class="nav menu">
-    <li class="active"><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-    <li><a href="admintoevoegen.html"> Admin toevoegen</a></li>
-    <li><a href="winkels.html"> Winkels</a></li>
-    <li><a href="balanssysteem.html">Balanssysteem</a></li>
-    <li><a href="prijsaanmaken.html"> Prijs aanmaken</a></li>
-    <li><a href="deelnemerexport.html"> Deelnemer export</a></li>
-    <li><a href="heatmap.html">Heatmap</a></li>
-    <li><a href="login.html"> Login</a></li>
-  </ul>
+    <div class="divider"></div>
+    <ul class="nav menu">
+        <li class="active"><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+        <li><a href="admintoevoegen.php"> Admin toevoegen</a></li>
+        <li><a href="winkels.php"> Winkels</a></li>
+        <li><a href="balanssysteem.php">Balanssysteem</a></li>
+        <li><a href="downloadCSV.php"> Deelnemers exporteren</a></li>
+        <li><a href="prijsaanmaken.html"> Prijs aanmaken</a></li>
+    </ul>
 </div><!--/.sidebar-->
 
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
