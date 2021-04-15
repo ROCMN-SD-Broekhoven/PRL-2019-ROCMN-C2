@@ -61,6 +61,25 @@
                                     </a>
                                 </div>
                             </div>";
+                            $email = $row["EMail"];
+                            echo "
+                            <script src=\"https://smtpjs.com/v3/smtp.js\"></script>
+                            <script>
+                            Email.send({
+                                Host: \"smtp.gmail.com\",
+                                Username: \"winkelcentrumamersfoort@gmail.com\",
+                                Password: \"Winkelcentrum1234\",
+                                To: \"$email\",
+                                From: \"winkelcentrumamersfoort@gmail.com\",
+                                Subject: \"Speluitslag\",
+                                Body: \"U heeft een $prijsn gewonnen bij de $wnaam!\",
+                            })
+                                .then(function (message) {
+                                    console.log(message)
+                        
+                                });
+                            </script>
+                          ";
                     }
                 }
             }

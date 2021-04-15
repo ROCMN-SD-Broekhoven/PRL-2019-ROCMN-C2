@@ -26,4 +26,46 @@
     </div>
 </body>
 
+<?php
+            $sess = $_COOKIE["session"];
+            $servername = "localhost";
+            $username = "Bas";
+            $password = "spaarSpook9";
+            $dbname = "winkelcentrum";
+    
+            $conn = new mysqli($servername, $username, $password, $dbname);
+    
+            if ($conn->connect_error) {
+                echo("verbinden mislukt, probeer het later nog eens");
+                die();
+            }
+    
+            $sql = "SELECT * FROM codes where SessionID = '$sess'";
+            $result = $conn->query($sql);
+          
+            if ($result->num_rows > 0) {
+              while($row = $result->fetch_assoc()) {
+                  $email = $row["EMail"];
+                  echo "
+                    <script src=\"https://smtpjs.com/v3/smtp.js\"></script>
+                    <script>
+                    Email.send({
+                        Host: \"smtp.gmail.com\",
+                        Username: \"winkelcentrumamersfoort@gmail.com\",
+                        Password: \"Winkelcentrum1234\",
+                        To: \"$email\",
+                        From: \"winkelcentrumamersfoort@gmail.com\",
+                        Subject: \"Speluitslag\",
+                        Body: \"U heeft helaas niet gewonnen!!\",
+                    })
+                        .then(function (message) {
+                            console.log(message)
+                
+                        });
+                    </script>
+                  ";
+              }
+            }
+?>
+
 </html>
