@@ -117,7 +117,7 @@ include 'cookiecheck.php';
         </style>
         <body>
 
-        <form action="">
+        <form action="balansToevoegen.php" method="get">
             <div class="container">
                 <h1>Balanssysteem</h1>
                 <p>Vul de velden in om het balanssysteem te zien</p>
@@ -127,17 +127,17 @@ include 'cookiecheck.php';
 
                 <input type="date" id="start" name="trip-start"
                        value="2021-04-15"
-                       min="2021-04-15" max="2099-12-31">
+                       max="2099-12-31">
 
                 <label for="bezoekers"><b>Aantal verwachte bezoekers:</b></label>
                 <input type="text" placeholder="Aantal verwachte bezoekers..." name="bezoekers" id="bezoekers" required>
 
                 <label for="weggegeven"><b>Aantal weggegeven prijzen:</b></label>
-                <input type="text" placeholder="Aantal weggegeven prijzen..." name="weggegeven" id="weggegeven" required>
+                <input type="text" placeholder="Aantal prijzen weg te geven..." name="weggegeven" id="weggegeven" required>
 
                 <hr>
 
-                <button type="submit" class="registerbtn">Resultaat</button>
+                <button type="submit" class="registerbtn">Toevoegen</button>
 
             </div>
         </form>

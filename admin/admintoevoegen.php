@@ -125,7 +125,7 @@ include 'cookiecheck.php';
 
                 <hr>
 
-                <button type="submit" class="registerbtn">Register</button>
+                <button type="submit" class="registerbtn">Toevoegen</button>
             </div>
         </form>
         </body>
